@@ -1,3 +1,11 @@
+body {
+    font-family: sans-serif;
+}
+h1 {
+    font-size: 150%;
+    margin:0;
+    padding:0;
+}
 #messaging {
     color: #990;
 }
@@ -24,10 +32,13 @@
 td.field{
     padding-left: 1em;
 }
-.mapVendor
+.mapArea
 {
     margin-top: 1em;
-    font-size: 200%;
+}
+.mapVendor
+{
+    font-size: 150%;
 }
 label.labelVendor {
     cursor: pointer;
@@ -82,8 +93,10 @@ label.labelVendor input:checked + span {
     background-color: #cfc;
     color: #000;
 }
-#footer {
-    height:10em;
+#footer, #footer a {
+    color: #ccc;
+    margin-top: 2em;
+    margin-bottom: 5em;
 }
 @media only screen
 and (max-device-width : 500px)

@@ -8,15 +8,10 @@
     <link rel="stylesheet" href="index.css">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <title>RandoMap</title>
-    <!--
-    Birdsite / FB / Slack preview meta.
-    iPhone zoom level.
-    Animation?
-    -->
+    <title>RandoWalk</title>
 </head>
 <body>
-
+<h1>RandoWalk</h1>
 <form onsubmit="return false;">
     <div id="messaging">&nbsp;</div>
     <table>
@@ -26,10 +21,13 @@
         <tr><td class="label">Longitude Variance:</td><td class="field"><input id="longVar" type="text" onkeypress="updateRadius();" onchange="updateRadius(); return saveSettings();"/></td></tr>
         <tr><td class="label">Approximate Walking Radius:</td><td class="field"><input id="radius" type="text" readonly="readonly"/></td></tr>
     </table>
-    <div class="mapVendor">
-        <label class="labelVendor"><input type="radio" name="vendor" value="apple" checked="checked"/><span>Apple Maps</span></label>
-        -or-
-        <label class="labelVendor"><input type="radio" name="vendor" value="google" /><span>Google Maps</span></label>
+    <div class="mapArea">
+        Map Source:<br />
+        <div class="mapVendor">
+            <label class="labelVendor"><input type="radio" name="vendor" value="apple" checked="checked"/><span>Apple</span></label>
+            -or-
+            <label class="labelVendor"><input type="radio" name="vendor" value="google" /><span>Google</span></label>
+        </div>
     </div>
     <div class="buttonArea">
         <input class="actionButton reset" type="button" onclick="return resetForm(true);" name="🔄 Reset Defaults" value="🔄 Reset Defaults" />
@@ -57,7 +55,10 @@
     </div>
 </form>
 <div id="footer">
-
+This browser-side webapp is copyright 2020, Brian Enigma, and is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International License</a>. The source code can be
+found <a href="https://github.com/BrianEnigma/randowalk">on GitHub</a>.
 </div>
 
 
