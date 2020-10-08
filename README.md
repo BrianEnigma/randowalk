@@ -33,7 +33,6 @@ To get a rough idea of the radius, use the “Validate Map Area” button. This 
 
 # TODO
 
-- Recalculate radius when changing variance.
 - Remove variance values, replace with radius.
 - Switch for Apple Maps versus Google Maps.
 

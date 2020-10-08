@@ -22,8 +22,8 @@
     <table>
         <tr><td class="label">Starting Latitude:</td><td class="field"><input id="lat" type="text" onchange="return saveSettings();"/></td></tr>
         <tr><td class="label">Starting Longitude:</td><td class="field"><input id="long" type="text" onchange="return saveSettings();"/></td></tr>
-        <tr><td class="label">Latitude Variance:</td><td class="field"><input id="latVar" type="text" onchange="return saveSettings();"/></td></tr>
-        <tr><td class="label">Longitude Variance:</td><td class="field"><input id="longVar" type="text" onchange="return saveSettings();"/></td></tr>
+        <tr><td class="label">Latitude Variance:</td><td class="field"><input id="latVar" type="text" onkeypress="updateRadius();" onchange="updateRadius(); return saveSettings();"/></td></tr>
+        <tr><td class="label">Longitude Variance:</td><td class="field"><input id="longVar" type="text" onkeypress="updateRadius();" onchange="updateRadius(); return saveSettings();"/></td></tr>
         <tr><td class="label">Approximate Walking Radius:</td><td class="field"><input id="radius" type="text" readonly="readonly"/></td></tr>
     </table>
     <div class="buttonArea">

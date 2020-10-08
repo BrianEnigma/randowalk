@@ -176,15 +176,20 @@ function loadCurrent()
     }
 }
 
+function updateRadius()
+{
+    const [lat1, lat2, long1, long2] = readFormValues();
+    let radius = approximateRadius(lat1, long1, lat2, long2)
+    radius = parseInt(radius * 100) / 100.0;
+    $('#radius').val(radius + ' miles');
+}
+
 /// Load the form default values. If cookies exist, use those as overrides.
 function initializeForm()
 {
     resetForm(false);
     loadSettings();
-    const [lat1, lat2, long1, long2] = readFormValues();
-    let radius = approximateRadius(lat1, long1, lat2, long2)
-    radius = parseInt(radius * 100) / 100.0;
-    $('#radius').val(radius + ' miles');
+    updateRadius();
 }
 
 $( document ).ready(function() {
