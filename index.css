@@ -82,7 +82,9 @@ label.labelVendor input:checked + span {
     background-color: #cfc;
     color: #000;
 }
-
+#footer {
+    height:10em;
+}
 @media only screen
 and (max-device-width : 500px)
 {
