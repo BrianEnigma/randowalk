@@ -1,8 +1,8 @@
 # RandoWalk
 
-Recently the [Randonautica](https://www.randonautica.com) app has stopped working. This left me hanging since I would often use it for random walks around the neighborhood. I figured it would be fairly simple to build out a basic web application that gave me a random point in the immediate vicinity. This is that webapp.
+Recently the [Randonautica](https://www.randonautica.com) app has stopped working. This left me hanging since I would often use it for random walks around the neighborhood. There are other misleadingly-similarly-named apps out there that do the same thing. They mostly looked like predatory bottom-feeders, with hidden fees and subscriptions, which put me off. I figured it would be fairly simple to build out a basic web application that gave me a random point in the immediate vicinity. This is that webapp.
 
-This version doesn't quite have the spooky woo-woo that goes with quantum attractors and voids. It uses regular random numbers — so take that as you will. I enjoy walking to new parts of the neighborhood and don't personally have a need for eerie quantum coincidences.
+This version doesn't quite have the spooky woo-woo that goes with quantum attractors and voids and other pseudoscience. It uses regular random numbers — so take that as you will. I enjoy walking to new parts of the neighborhood and don't personally have a need for eerie quantum coincidences. If you want to put intention in your head before hitting the walk button, please do.
 
 # Demo
 
