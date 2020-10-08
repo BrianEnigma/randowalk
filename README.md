@@ -72,6 +72,13 @@ To get a rough idea of the radius, use the “Validate Map Area” button. This 
 - Remove variance values, replace with radius.
 - Birdsite / FB / Slack preview meta.
 
+# Third Party Libraries
+
+This project makes use of the following third party libraries:
+
+- [jQuery](https://jquery.com)
+- [JavaScript Cookie](https://github.com/js-cookie/js-cookie)
+
 # License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
