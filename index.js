@@ -90,9 +90,9 @@ function readFormValues()
     ];
 }
 
-function buildUrl(lat_source, long_source, lat_destination, long_destination)
+function buildUrlApple(lat_source, long_source, lat_destination, long_destination)
 {
-    return 'http://maps.apple.com/?t=m&dirflg=w&saddr=' +
+    return 'https://maps.apple.com/?t=m&dirflg=w&saddr=' +
         lat_source +
         ',' +
         long_source +
@@ -100,6 +100,27 @@ function buildUrl(lat_source, long_source, lat_destination, long_destination)
         lat_destination +
         ',' +
         long_destination;
+}
+
+function buildUrlGoogle(lat_source, long_source, lat_destination, long_destination)
+{
+    return 'https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=' +
+        lat_source +
+        ',' +
+        long_source +
+        '&destination=' +
+        lat_destination +
+        ',' +
+        long_destination;
+}
+
+function buildUrl(lat_source, long_source, lat_destination, long_destination)
+{
+    const vendor = $("input:radio[name=vendor]:checked").val();
+    if ('google' == vendor)
+        return buildUrlGoogle(lat_source, long_source, lat_destination, long_destination);
+    else
+        return buildUrlApple(lat_source, long_source, lat_destination, long_destination);
 }
 
 function deg2rad(deg) {

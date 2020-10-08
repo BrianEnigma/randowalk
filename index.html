@@ -26,6 +26,11 @@
         <tr><td class="label">Longitude Variance:</td><td class="field"><input id="longVar" type="text" onkeypress="updateRadius();" onchange="updateRadius(); return saveSettings();"/></td></tr>
         <tr><td class="label">Approximate Walking Radius:</td><td class="field"><input id="radius" type="text" readonly="readonly"/></td></tr>
     </table>
+    <div class="mapVendor">
+        <label class="labelVendor"><input type="radio" name="vendor" value="apple" checked="checked"/><span>Apple Maps</span></label>
+        -or-
+        <label class="labelVendor"><input type="radio" name="vendor" value="google" /><span>Google Maps</span></label>
+    </div>
     <div class="buttonArea">
         <input class="actionButton reset" type="button" onclick="return resetForm(true);" name="🔄 Reset Defaults" value="🔄 Reset Defaults" />
         <div class="description">
