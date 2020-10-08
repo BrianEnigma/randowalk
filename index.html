@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery-3.5.1.min.js" type="application/javascript"></script>
+    <script src="js.cookie.min.js" type="application/javascript"></script>
+    <script src="settings.js" type="application/javascript"></script>
+    <script src="index.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>RandoMap</title>
+    <!--
+    Birdsite / FB / Slack preview meta.
+    iPhone zoom level.
+    Animation?
+    -->
+</head>
+<body>
+
+<form onsubmit="return false;">
+    <div id="messaging">&nbsp;</div>
+    <table>
+        <tr><td class="label">Starting Latitude:</td><td class="field"><input id="lat" type="text" onchange="return saveSettings();"/></td></tr>
+        <tr><td class="label">Starting Longitude:</td><td class="field"><input id="long" type="text" onchange="return saveSettings();"/></td></tr>
+        <tr><td class="label">Latitude Variance:</td><td class="field"><input id="latVar" type="text" onchange="return saveSettings();"/></td></tr>
+        <tr><td class="label">Longitude Variance:</td><td class="field"><input id="longVar" type="text" onchange="return saveSettings();"/></td></tr>
+        <tr><td class="label">Approximate Walking Radius:</td><td class="field"><input id="radius" type="text" readonly="readonly"/></td></tr>
+    </table>
+    <div class="buttonArea">
+        <input class="actionButton reset" type="button" onclick="return resetForm(true);" name="🔄 Reset Defaults" value="🔄 Reset Defaults" />
+        <div class="description">
+            Reset the form fields to their default values.
+        </div>
+    </div>
+    <div class="buttonArea">
+        <input class="actionButton load" type="button" onclick="return loadCurrent();" name="🌍 Load Current GPS Position" value="🌍 Load Current GPS Position" />
+        <div class="description">
+        Load the starting latitude and longitude from your device's GPS.
+        </div>
+    </div>
+    <div class="buttonArea">
+        <input class="actionButton validate" type="button" onclick="return testArea();" name="🗺 Validate Map Area" value="🗺 Validate Map Area" />
+        <div class="description">
+        Show on the map a path from the farthest northwest and southeast corners of the walk boundary (latitude/longitude variance).
+        </div>
+    </div>
+    <div class="buttonArea">
+        <input class="actionButton go" type="button" onclick="return generateLocation();" name="🚶‍♀️ Take A Random Walk" value="🚶‍♀️ Take A Random Walk" />
+        <div class="description">
+        When you're satisfied with the settings, click this to take a walk.
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

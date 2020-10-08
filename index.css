@@ -1,0 +1,71 @@
+#messaging {
+    color: #990;
+}
+#lat, #long {
+    font-family: monospace;
+    width: 10em;
+}
+#long {
+    font-family: monospace;
+    width: 10em;
+}
+#latVar, #longVar {
+    font-family: monospace;
+    width: 5em;
+}
+#radius {
+    font-family: monospace;
+    width: 10em;
+    color: #666;
+    border: solid #ccc 1px;
+    background-color: #ddd;
+    font-style: italic;
+}
+td.field{
+    padding-left: 1em;
+}
+.buttonArea
+{
+    margin-top: 2em;
+}
+.description
+{
+    margin-left: 3em;
+    margin-top: 0.5em;
+}
+.actionButton {
+    border: solid black 1px;
+    border-radius: 10px;
+    font-size: 200%;
+    font-weight: bold;
+    width: 500px;
+}
+.reset {
+    background-color: #ddd;
+    color: #000;
+}
+.load {
+    background-color: #ddd;
+    color: #000;
+}
+.validate {
+    background-color: #ddd;
+    color: #000;
+}
+.go {
+    background-color: #cfc;
+    color: #000;
+}
+
+@media only screen
+and (max-device-width : 500px)
+{
+    .actionButton {
+        border: solid black 1px;
+        border-radius: 10px;
+        font-size: 100%;
+        font-weight: bold;
+        width: 100%;
+        white-space: normal;
+    }
+}
