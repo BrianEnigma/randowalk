@@ -162,6 +162,10 @@ function setPosition(position)
         $('#lon').val(position.coords.longitude);
         saveSettings();
         writeMessage('GPS coordinates loaded.');
+        $('#tip1').hide();
+        $('#tip2').hide();
+        let tipId = '#tip' + Math.floor((Math.random() * 2) + 1);
+        $(tipId).show();
         $('#buttonGps').fadeOut();
         $('#cardGps').slideUp(400, function() {
             $('#cardGo').slideDown(400);
