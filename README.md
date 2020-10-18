@@ -67,6 +67,13 @@ The latitude and longitude variance are used to determine range. We will pick a 
 
 To get a rough idea of the radius, use the “Validate Map Area” button. This will show you the top-left and bottom-right corners of your possible destinations.
 
+# Changelog
+
+- Version 2
+    - We now always query the browser for GPS coordinates and do not cache them in a cookie. If previous cookies exist with GPS coordinates, then forcibly delete them. Cookies get sent to the server and although we never store or look at them, I'd rather not have even the possibility of that kind of information disclosure. 
+    - Changed from “variance” to “radius.”
+    - Added stock photo [map background](https://www.istockphoto.com/vector/seamless-texture-city-map-in-retro-style-outline-map-gm1151367251-312017391?clarity=false).
+
 # TODO
 
 - Remove variance values, replace with radius.

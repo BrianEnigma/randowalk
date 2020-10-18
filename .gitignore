@@ -1,5 +1,3 @@
-settings.js
-settings-mine.js
 **/*.DS_Store
 .idea
 sync.sh
