@@ -12,11 +12,11 @@ You can see a demo at: <https://netninja.com/randowalk/>
 - If you'd like to see the furthest distance possible to send you on a walk, hit “Validate Map Area.” This will draw a path from two opposing furthest corners.
 - Hit the “Take a Random Walk” button to launch the map. Don't like your destination? You can always try again.
 <table width="600">
-<tr><td width="300"><img src="./img/example-mainscreen.jpg" width="300"/></td><td width="300"><img src="./img/example-extent.jpg" width="300"/></td></tr>
+<tr><td width="300"><img src="./img/example-mainscreen1.jpg" width="300"/></td><td width="300"><img src="./img/example-mainscreen2.jpg" width="300"/></td></tr>
 <tr><td width="300">
-    The main screen of the web application. This lets you set your starting point and (indirectly) your walk radius.
+    The first screen of the web application. This lets you set your walk radius.
 </td><td width="300">
-    When you click on “Validate Map Area,” you'll see a sample map with waypoints in the far northwest and far southeast corners of where you might be sent on your walk. 
+    The second screen, after your GPS coordinates are validated. Clicking the green button launches your preferred mapping app. 
 </td></tr>
 </table>
 
@@ -38,34 +38,8 @@ When you hit the “Take a Random Walk” button, your mapping app will launch w
 
 # Installation
 
-- Copy `settings-example.js` to `settings.js`
-- Edit your default starting GPS location and variance.
-- Put these files on a web server.
-
-# Get Your GPS Location
-
-<div style="background-color: #ffc; border: solid #999 1px; padding: 1em; margin: 3em 0; border-radius: 5px;">
-⚠️ Privacy Note:<br/>Please be aware that any GPS coordinate you put into the `settings.js` file will be visible as the default location to anyone who loads up your instance of this webapp. If you put the GPS location of your home in settings, then put these files on a public server, there will be a strong possibility of a privacy violation. Your best bet is to either leave it as is (and use the GPS button when you want to begin) or to load in the GPS coordinates of a public landmark.
-</div>
-
-## The Easy Way: “Here”
-
-- Use the “Load Current GPS Location” feature of the app.
-- Copy and paste the latitude and longitude into the `settings.js` file.
-
-## The Complicated Way: “Anywhere”
-
-- Find your house (or other starting point) in a [Google Maps](https://maps.google.com) search. For example for the defaults, I did a search for the Portlandia sculpture in downtown Portland, Oregon.
-- Copy out the URL. In this case: `https://www.google.com/maps/place/Portlandia/@45.5157751,-122.6812279,17z/data=!3m1!4b1!4m5!3m4!1s0x54950a101cb3456b:0x46db417e8d645c59!8m2!3d45.5157751!4d-122.6790392`
-- There are obvious GPS coordinates at the front. In this case, `@45.5157751,-122.6812279`. You _*DO NOT*_ want those. There are less obvious ones at the end. In this case, the part that goes `d45.5157751!4d-122.6790392`. More specifically, if you trim out the extra letters and symbols (don't forget to retain the negative), you'll get `45.5157751,-122.6790392`
-- Close your Google Maps browser tab and open a fresh one. Paste those coordinates into the location box to verify they are correct.
-- Use those in your `settings.js` file.
-
-# Finding a Default Variance
-
-The latitude and longitude variance are used to determine range. We will pick a random number that is +/- that max variance value, then add (or subtract, if negative) to the latitude and longitude. This gives a bounding box that limits how far you'll walk. Up in Portland, this gives about a 0.6 mile radius. Because of the way latitude and longitude work, this radius may increase closer to the equator and shrink the further you move from it.
-
-To get a rough idea of the radius, use the “Validate Map Area” button. This will show you the top-left and bottom-right corners of your possible destinations.
+- For others to enjoy: Put the index and javascript files, as well as the img folder, on a web server.
+- For yourself: Open index.html in a web browser.
 
 # Changelog
 
@@ -73,10 +47,14 @@ To get a rough idea of the radius, use the “Validate Map Area” button. This 
     - We now always query the browser for GPS coordinates and do not cache them in a cookie. If previous cookies exist with GPS coordinates, then forcibly delete them. Cookies get sent to the server and although we never store or look at them, I'd rather not have even the possibility of that kind of information disclosure. 
     - Changed from “variance” to “radius.”
     - Added stock photo [map background](https://www.istockphoto.com/vector/seamless-texture-city-map-in-retro-style-outline-map-gm1151367251-312017391?clarity=false).
+    - Tips for your trips (just two at this point).
+    - Card-based interface to simplify the flow.
+    - Fix README file for new workflow.
 
 # TODO
 
-- Remove variance values, replace with radius.
+- Fix outermost container CSS for iPhone. It spans a little off the right edge of the screen.
+- If user selected 1 mile, for example, don't do a random of [0..1]. Try to distribute it more toward the “1” end of the spectrum and less toward the zero. The user probably doesn't want to walk only 0.2 miles.
 - Birdsite / FB / Slack preview meta.
 
 # Third Party Libraries
